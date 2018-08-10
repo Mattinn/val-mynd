@@ -3,7 +3,7 @@ A simple game that is designed to help kids recognize letters by connecting imag
 
 #How to run 
 
-1) Clone the projecyt to a repo on your machine
+1) Clone the project to a repo on your machine
 
 2) Deploy the project on a web server, like nodejs http-server: http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server
 
