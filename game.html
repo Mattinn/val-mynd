@@ -1,0 +1,16 @@
+<div id="wrapper">
+	<div id="menu">
+		<a href="#/start">Forsíða</a> - <a href="#/about">Um leikinn</a>
+	</div>
+	<div id="soundControl">
+		<input type="checkbox" ng-model="soundEnabled" /> Hljóð
+	</div>
+	<div id="letter">{{chosenLetter}}</div>
+	<div>
+		<progress max="{{allowedTurns}}" value="{{rightAnswers}}" />
+	</div>
+	<div id="imageDiv">
+		<img class="image defaultBorder" ng-repeat="obj in imageArray" ng-src="/images/{{obj.getImage()}}" ng-click="checkImage($index, $event)" />
+	</div>
+</div>
+<audio id="sound" />

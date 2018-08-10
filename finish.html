@@ -1,0 +1,9 @@
+<div id="wrapper">
+	<div id="menu">
+		<a href="#/start">Forsíða</a> - <a href="#/about">Um leikinn</a>
+	</div>
+	<p>Leikurinn hefur nú klárast og tók {{totalTime}} sekúndur.</p>
+	<p>Þú náðir {{rightAnswers}}/{{rightAnswers+wrongAnswers}} og fékkst {{finalImage.word}} medalíu</p>
+	<div><img ng-src="/images/{{finalImage.getImage()}}"/></div>
+	<button ng-click="startGame()">Byrja nýjan leik</button>
+</div>
