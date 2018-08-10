@@ -1,7 +1,7 @@
 # Val Mynd
 A simple game that is designed to help kids recognize letters by connecting images of animals, to the first letter of the animals name
 
-#How to run 
+# How to run 
 
 1) Clone the project to a repo on your machine
 
