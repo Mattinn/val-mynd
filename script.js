@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
 
 // Root scope, all controllers inherit this data
 app.run(function($rootScope) {
-	$rootScope.gameVersion = '1.0';
+	$rootScope.gameVersion = '1.1';
 
 	$rootScope.createNewGame = function() {
 		$rootScope.turnCounter = 1;
