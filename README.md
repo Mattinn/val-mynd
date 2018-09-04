@@ -5,6 +5,10 @@ A simple game that is designed to help kids recognize letters by connecting imag
 
 1) Clone the project to a repo on your machine
 
-2) Deploy the project on a web server, like nodejs http-server: http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server
+2) Deploy the project on a web server
+    - if you need a local server, you can follow this guide: http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server
 
-3) Navigate your browser to http://localhost:8080 
+3) Navigate your browser to the webserver or http://localhost:8080 for the local server and the game should be up and running!
+
+
+Here you can see the project live: https://perfusive-solder.000webhostapp.com/#/
