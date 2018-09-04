@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
 
 // Root scope, all controllers inherit this data
 app.run(function($rootScope) {
-	$rootScope.gameVersion = '0.1';
+	$rootScope.gameVersion = '1.0';
 
 	$rootScope.createNewGame = function() {
 		$rootScope.turnCounter = 1;
@@ -44,7 +44,7 @@ app.run(function($rootScope) {
 
 	// Setup
 	$rootScope.allowedTurns = 10;
-	$rootScope.waitUntilNewImage = 5;
+	$rootScope.waitUntilNewImage = 3;
 	$rootScope.soundEnabled = true;
 
 	// Initialize a new game
@@ -131,7 +131,7 @@ function gameCtrl($scope, $routeParams, $rootScope, $timeout) {
 				//playSound($scope.imageArray[i].getSound());
 			}
 
-			$($event.target).removeClass('defaultBorder').addClass('correctImage');
+			$($event.target).removeClass('imgBorder').addClass('correctImage');
 			$scope.chosenLetter = $scope.imageArray[i].word;
 			$scope.imageArray[i].chosen = true;
 			$rootScope.turnCounter++;
@@ -154,7 +154,7 @@ function gameCtrl($scope, $routeParams, $rootScope, $timeout) {
 			if($scope.soundEnabled)
 				playSound([$scope.imageArray[i].getSound(), 'wrong.mp3']);
 			$rootScope.wrongAnswers++;
-			$($event.target).removeClass('defaultBorder').addClass('wrongImage');
+			$($event.target).removeClass('imgBorder').addClass('wrongImage');
 		}
 	}
 
@@ -212,7 +212,7 @@ function gameCtrl($scope, $routeParams, $rootScope, $timeout) {
 		shuffle($scope.imageArray);
 
 		// Apply default styles in new round
-		$('img').removeClass('correctImage').removeClass('wrongImage').addClass('defaultBorder');
+		$('img').removeClass('correctImage').removeClass('wrongImage').addClass('imgBorder');
 
 		// Play the sound for the letter
 		if($scope.soundEnabled)
@@ -274,7 +274,7 @@ function imageObj(word, image) {
 // Play a single sound or an array of sounds
 function playSound(sound) {
 	var audio = document.getElementById('sound');
-	if (sound instanceof Array) {
+	if (sound.length > 0 && sound instanceof Array) {
 	    audio.src = sound.shift();
 	    audio.play();
 	    if (sound.length) {
@@ -285,11 +285,18 @@ function playSound(sound) {
 	        audio.addEventListener('error', function () {
 	            playSound(sound);
 	        });
-	    }
+	    } else {
+			return -1;
+		}
 	}
 	else {
-		audio.src = sound;
-		audio.play();
+		if (sound.length > 0) {
+			audio.src = sound;
+			audio.play();
+		} else {
+			return -1;
+		}
+		
 	}
 }
 

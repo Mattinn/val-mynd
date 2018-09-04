@@ -10,7 +10,7 @@
 		<progress max="{{allowedTurns}}" value="{{rightAnswers}}" />
 	</div>
 	<div id="imageDiv">
-		<img class="image defaultBorder" ng-repeat="obj in imageArray" ng-src="/images/{{obj.getImage()}}" ng-click="checkImage($index, $event)" />
+		<img class="image imgBorder" ng-repeat="obj in imageArray" ng-src="/images/{{obj.getImage()}}" ng-click="checkImage($index, $event)" />
 	</div>
 </div>
 <audio id="sound" />

@@ -74,9 +74,6 @@ button {
 	cursor: pointer;
 	margin: auto; 
 	text-align: center;
-	-moz-box-shadow:inset -2px 2px 0px 0px #ffffff;
-	-webkit-box-shadow:inset -2px 2px 0px 0px #ffffff;
-	box-shadow:inset -2px 2px 0px 0px #ffffff;
 	background-color:#ededed;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -101,7 +98,7 @@ button:active {
 	top:1px;
 }
 
-.defaultBorder {
+.imgBorder {
 	border: 5px solid #82c51e;
 	margin: 3px;
 	-moz-border-radius: 15px;
